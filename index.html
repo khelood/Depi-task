@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Khaled Waled</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="https://ui-avatars.com/api/?name=K+W&background=0abf9f&color=fff&rounded=true" alt="avatar">
+        <div>
+          <strong>Khaled Waled</strong>
+          <small>Full Stack .NET</small>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="users">Users</button>
+        <button data-view="posts">Posts</button>
+        <button data-view="comments">Comments</button>
+        <button data-view="profile">Profile</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="themeToggle">🌙 Theme</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <h2 id="viewTitle">Dashboard</h2>
+      </header>
+
+      <section id="dashboard" class="view">
+        <div class="cards">
+          <div class="card">Users <span id="usersCount">0</span></div>
+          <div class="card">Posts <span id="postsCount">0</span></div>
+          <div class="card">Comments <span id="commentsCount">0</span></div>
+        </div>
+      </section>
+
+      <section id="users" class="view hidden">
+        <div class="actions">
+          <button id="showFavs">Show Favorites</button>
+          <button id="clearFavs" class="danger">Clear Favorites</button>
+        </div>
+        <table id="usersTable" class="display" style="width:100%"></table>
+      </section>
+
+      <section id="posts" class="view hidden">
+        <div class="actions">
+          <input id="searchPost" placeholder="Search posts...">
+          <button id="addPost">Add Post</button>
+        </div>
+        <div id="postsContainer" class="posts-grid"></div>
+      </section>
+
+      <section id="comments" class="view hidden">
+        <h3>Latest Comments</h3>
+        <div id="commentsList"></div>
+      </section>
+
+      <section id="profile" class="view hidden">
+        <div class="profile-card">
+          <img src="https://ui-avatars.com/api/?name=Khaled+Waled&background=0abf9f&color=fff&rounded=true&size=128"
+            alt="Khaled">
+          <h3>Khaled Waled</h3>
+          <p>Email: khaledwaled@gmail.com</p>
+          <p>Role: Full Stack .NET Trainee</p>
+          <p>Location: Shobra, Cairo</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
